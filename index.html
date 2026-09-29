@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daylist — My tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header><a class="brand" href="index.html"><span class="logo">✓</span> daylist</a><span class="tagline">A little focus. A little progress.</span></header>
+    <section class="intro"><span class="eyebrow">YOUR EVERYDAY SPACE</span><h1>Make room for<br>what matters.</h1><p>Big plans or small reminders. Take them one task at a time.</p></section>
+    <div class="layout">
+      <section class="card composer" aria-labelledby="form-heading">
+        <h2 id="form-heading">Add a new task</h2><p class="muted">Get it out of your head and onto your list.</p>
+        <form id="task-form">
+          <label for="title">Task name <span class="required">*</span></label>
+          <input id="title" name="title" placeholder="What would you like to get done?" maxlength="160" required>
+          <label for="notes">Notes <span class="optional">optional</span></label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Add details, ideas, or a helpful reminder…" maxlength="5000"></textarea>
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority"><option value="Low">Low</option><option value="Medium" selected>Medium</option><option value="High">High</option></select>
+          <div class="form-actions"><button class="primary" id="save-button" type="submit">+ Add task</button><button id="cancel-edit" type="button" hidden>Cancel</button></div>
+        </form>
+        <p class="save-note">Saved in this browser, just for you.</p>
+      </section>
+      <section class="task-section" aria-labelledby="list-heading">
+        <div class="list-heading"><h2 id="list-heading">Your tasks <span id="task-count">0</span></h2><span id="progress">A fresh start</span></div>
+        <div class="filters" role="group" aria-label="Filter tasks"><button type="button" data-filter="all" aria-pressed="true">All tasks</button><button type="button" data-filter="active" aria-pressed="false">Active</button><button type="button" data-filter="completed" aria-pressed="false">Completed</button></div>
+        <div id="task-list"></div>
+        <div id="empty-state" class="empty"><span class="empty-icon" aria-hidden="true">✓</span><h3>A little space for a fresh start</h3><p>Add your first task and take it from there.</p></div>
+      </section>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+    <footer>One thing at a time. You’ve got this.</footer>
+  </main>
+</body>
+</html>
